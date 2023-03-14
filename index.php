@@ -10,21 +10,20 @@
 
 <body>
     <?php
-    $in = array(1, 2, 4, 7, 1, 6, 2, 8);
+    $pd = array(1, 2, 4, 7, 1, 6, 2, 8);
 
-    // Sort array decreasing
-    rsort($in, SORT_NUMERIC);
 
-    // Start with two empty arrays
+    rsort($pd, SORT_NUMERIC);
+
+
     $arr1 = $arr2 = array();
 
-    // Put the next value in the array in the array with the lowest sum
-    foreach ($in as $value)
+
+    foreach ($pd as $value)
         if (array_sum($arr2) > array_sum($arr1)) $arr1[] = $value;
         else $arr2[] = $value;
 
-    // Wrap in array (as in question)
-    // $out = array($arr1, $arr2);
+
 
     $List1 = implode(' + ', $arr1);
     $List2 = implode(' + ', $arr2);
